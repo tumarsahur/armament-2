@@ -1,0 +1,306 @@
+/* Stil general */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #1c1f26;
+  color: #e4e4e4;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+header {
+  background-color: #2b2f3a;
+  padding: 20px;
+  text-align: center;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+nav ul li a {
+  color: #e4e4e4;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+nav ul li a:hover {
+  color: #f5b301;
+}
+
+main {
+  flex: 1;
+  padding: 20px;
+}
+
+footer {
+  background-color: #2b2f3a;
+  text-align: center;
+  padding: 10px;
+  margin-top: auto;
+}
+
+h1, h2, h3 {
+  color: #f5b301;
+  text-align: center;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 10px auto;
+  border-radius: 8px;
+}
+
+video, audio, iframe {
+  display: block;
+  margin: 20px auto;
+  width: 90%;
+  max-width: 900px;
+  height: auto;
+  border-radius: 8px;
+}
+
+.text-box {
+  background-color: #2b2f3a;
+  border: 2px solid #f5b301;
+  padding: 20px;
+  margin: 20px auto;
+  border-radius: 10px;
+  max-width: 900px;
+  box-shadow: 0 0 10px rgba(245, 179, 1, 0.2);
+}
+
+form {
+  background-color: #2b2f3a;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+form input, form textarea, form button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1em;
+}
+
+form button {
+  background-color: #f5b301;
+  color: #1c1f26;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+form button:hover {
+  background-color: #e0a800;
+}
+
+/* Animații */
+nav ul li a {
+  position: relative;
+}
+
+nav ul li a::after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background: #f5b301;
+  left: 0;
+  bottom: -5px;
+  transition: width 0.3s;
+}
+
+nav ul li a:hover::after {
+  width: 100%;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  main, form {
+    padding: 10px;
+  }
+
+  header, footer {
+    text-align: center;
+  }
+
+  video, audio, iframe {
+    width: 100%;
+    height: auto;
+  }
+
+  .text-box {
+    padding: 15px;
+    margin: 15px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  h1 {
+    font-size: 1.5em;
+  }
+
+  h2 {
+    font-size: 1.2em;
+  }
+
+  form input, form textarea, form button {
+    font-size: 0.9em;
+  }
+}
+
+/* Stiluri pentru tabel */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px auto;
+}
+
+th, td {
+  border: 1px solid #f5b301;
+  padding: 15px;
+  text-align: center;
+}
+
+th {
+  background-color: #2b2f3a;
+  color: #f5b301;
+}
+
+/* Stiluri pentru text */
+p, h1, h2, h3 {
+  text-align: center;
+  margin: 20px;
+}
+
+
+/* Formular */
+form {
+  background-color: #2b2f3a;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 600px;
+  width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box; /* Asigură-te că padding-ul și marginile nu afectează dimensiunile */
+  overflow: hidden; /* Ascunde orice conținut care depășește limitele formularului */
+}
+
+/* Stiluri pentru inputuri și buton */
+form input, form textarea, form button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1em;
+  box-sizing: border-box; /* Asigură-te că padding-ul nu depășește dimensiunile */
+}
+
+form button {
+  background-color: #f5b301;
+  color: #1c1f26;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+form button:hover {
+  background-color: #e0a800;
+}
+
+/* Adaptează formularul pentru mobil */
+@media screen and (max-width: 768px) {
+  form {
+    padding: 15px;
+    width: 90%; /* Mai mic pentru a nu depăși limitele pe mobil */
+  }
+
+  form input, form textarea, form button {
+    font-size: 0.9em;
+  }
+}
+
+
+/* Stil pentru galeria foto */
+.galerie {
+  text-align: center;
+}
+
+.galerie .grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Două imagini pe rând */
+  gap: 10px; /* Spațiu între imagini */
+}
+
+.galerie img {
+  width: 90%; /* Imaginile vor ocupa 90% din lățimea containerului */
+  height: 250px; /* O înălțime mai mică, dar mai echilibrată */
+  object-fit: cover; /* Asigură că imagini sunt scalate proporțional */
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Adaugă umbra pentru un efect de adâncire */
+}
+
+/* Responsivitate pentru dispozitive mobile */
+@media screen and (max-width: 768px) {
+  .galerie .grid {
+    grid-template-columns: 1fr; /* O singură imagine pe rând pe ecrane mici */
+  }
+
+  .galerie img {
+    width: 100%; /* Pe dispozitive mici, imaginile vor ocupa 100% din lățimea containerului */
+    height: 200px; /* Crește puțin înălțimea pe ecrane mici pentru a fi mai vizibile */
+  }
+}
+
+.responsive-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 16px;
+  table-layout: fixed;
+}
+
+.responsive-table th,
+.responsive-table td {
+  border: 1px solid #ccc;
+  padding: 12px;
+  text-align: left;
+  word-wrap: break-word;
+}
+
+/* Мобильная адаптация */
+@media (max-width: 600px) {
+  .responsive-table {
+    font-size: 12px;
+  }
+
+  .responsive-table th,
+  .responsive-table td {
+    padding: 6px;
+  }
+
+  .responsive-table th,
+  .responsive-table td {
+    white-space: normal;
+  }
+}
